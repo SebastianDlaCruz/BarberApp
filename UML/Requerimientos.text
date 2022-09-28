@@ -36,7 +36,9 @@ Calcular un promedio por mes del monto de sus ingresos.
 Herramientas con las cuales realizaremos el software
 
 Editor : vscode 
-Lenguajes o frameworks: React  y Laravel.
+Lenguajes/frameworks/ etc:  
+     FrontEnd : Parcel , html ,css js y react. Patron de diseño clear Architecture.
+     BackeEnd :  php y laravel.
 Base de Datos : Relacionales , sql , mysql.
 Diseño :  Figma.
 
