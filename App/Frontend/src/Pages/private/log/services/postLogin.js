@@ -1,19 +1,21 @@
 export const postLogin = async (data) => {
+
     try {
 
-        let res = fetch('endpoit', {
+        let res = await fetch('http://barberappgarin.herokuapp.com/api/user/login', {
             method: 'POST',
-            body: FormData(data),
-            headers: "Content-Type: application/json-utf8",
+            body: data,
+            headers: { "Content-Type": "application/json" },
+
         })
+        const [respon] = await res.json();
 
-        if (!res.ok) throw new Error('ops algo salio mal');
-
-        return true;
+        return respon;
 
     } catch (e) {
-
         console.error(e.message);
     }
+
+
 }
 

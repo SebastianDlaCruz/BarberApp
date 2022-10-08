@@ -1,17 +1,22 @@
-import React, { createRef, useRef } from 'react';
+import React, { createRef } from 'react';
 import LoginAdmin from './models/LoginAdmin';
+import { postLogin } from './services/postLogin';
+import useFormRespuesta from './hook/useFormRespuesta';
 
 const refEmail = createRef(''),
     refPassword = createRef('');
 
 const Login = () => {
+    const [setAdmin] = useFormRespuesta();
     const handlerSubmit = (event) => {
         event.preventDefault();
         const email = refEmail.current.value,
             password = refPassword.current.value;
         const admin = new LoginAdmin(email, password)
         const data = JSON.stringify(admin);
-        console.log(data);
+        const respon = postLogin(data);
+        respon.then((res) => setAdmin(res));
+
     };
 
     return (
@@ -26,6 +31,7 @@ const Login = () => {
                 <input ref={refPassword} type="password" required />
                 <input type="submit" />
             </form>
+
         </div>
     );
 }

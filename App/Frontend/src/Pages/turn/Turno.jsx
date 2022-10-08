@@ -9,5 +9,5 @@ const Turno = () => {
         </div>
     );
 }
-/* barberappgarin.herokuapp.com/api/users */
+
 export default Turno;
