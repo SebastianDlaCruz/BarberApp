@@ -1,9 +1,10 @@
 import React from 'react';
+import Index from './pages/home/Index';
 
 const BarberApp = () => {
     return (
         <>
-            <h1>Hola mundi</h1>
+            <Index />
         </>
     );
 }
